@@ -1,0 +1,209 @@
+@use "./../abstracts" as *;
+
+.opacity-25 {
+    opacity: 0.25;
+}
+
+.opacity-50 {
+    opacity: 0.5;
+}
+
+.relative {
+    position: relative;
+}
+
+.z-index {
+    z-index: 1;
+
+    &.index-99 {
+        z-index: 99;
+    }
+
+    &.index-99999 {
+        z-index: 9999999 !important;
+    }
+}
+
+.pointer {
+    cursor: pointer !important;
+}
+
+.app-section-style {
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
+
+.page-top-padding {
+    padding-top: 30px;
+
+    &.mobile {
+        padding-top: 50px;
+    }
+}
+
+.img-contain {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.img-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.flex-center {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.card-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: $background;
+    // background: radial-gradient(transparent, $background);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    z-index: -1;
+
+    &.o-10 {
+        opacity: 1;
+    }
+
+    @for $i from 1 through 9 {
+        &.o-#{$i} {
+            opacity: calc($i / 10);
+        }
+    }
+}
+
+.section-title {
+    font-size: 2em;
+    font-weight: 900;
+    color: $secondary;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.section-description {
+    // font-size: 14px;
+    font-weight: 500;
+    line-height: 1.7;
+    color: $main-text-color;
+}
+
+.font-size-xx-small {
+    font-size: xx-small !important;
+}
+
+.font-size-x-small {
+    font-size: x-small !important;
+}
+
+.font-size-small {
+    font-size: small !important;
+}
+
+.font-size-medium {
+    font-size: medium !important;
+}
+
+.transition {
+    transition: all 150ms ease-in-out;
+
+    @for $i from 1 through 10 {
+        &.duration-#{$i}00 {
+            transition-duration: #{$i}00ms;
+        }
+    }
+}
+
+.gradient-btn {
+    // background: linear-gradient(to right, $secondary-lighten-1, $secondary);
+}
+
+.truncate {
+    display: -webkit-box !important;
+    -webkit-line-clamp: 1 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+
+    @for $i from 1 through 5 {
+        &.line-#{$i} {
+            -webkit-line-clamp: $i !important;
+        }
+    }
+}
+
+.borderd-card {
+    // box-shadow: 0 0 0 1px $main-text-color-o50;
+}
+
+.custom-nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    row-gap: 10px;
+
+    a {
+        color: $main-text-color;
+        text-decoration: none;
+        margin: 0 10px;
+        font-weight: 100 !important;
+        font-size: 12px;
+    }
+}
+
+.line-height {
+    line-height: 1.5;
+
+    &.line-1 {
+        line-height: 1.5;
+    }
+
+    &.line-2 {
+        line-height: 2;
+    }
+
+    &.line-3 {
+        line-height: 3;
+    }
+}
+
+.my-input {
+    &.v-input {
+        .v-input__slot {
+            border-radius: 100px !important;
+        }
+    }
+
+    .v-field--variant-solo,
+    .v-field--variant-solo-filled {
+        background-color: $primary;
+    }
+}
+
+.transform-center {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.card-overlay-bg {
+    width: 430px;
+    position: absolute;
+    top: -65px;
+    left: 50%;
+    transform: translateX(-50%);
+    img {
+        width: 100%;
+        height: 100%;
+        opacity: 4%;
+    }
+}

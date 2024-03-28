@@ -1,0 +1,54 @@
+
+@use './../../abstracts' as *;
+
+
+
+.party-page {
+    
+}
+
+
+.party-page {
+    width: 100%;
+    // min-height: 100vh;
+    // overflow-x: hidden ;
+    
+    .song-description {
+        width: 100%;
+        height: 125px;
+        background: url('./../../img/song_description_bg.png') no-repeat center center;
+        background-size: cover;
+        border-radius: 1em;
+        position: relative;
+        display: flex;
+    
+        .cdj-box {
+            width: 25%;
+            height: 100%;
+            position: relative;
+        
+            .song-img {
+                width: 30px;
+                height: 30px;
+                object-fit: contain;
+                position: absolute;
+                object-fit: cover;
+                border-radius: 50%;
+                top: 62%;
+                left: 10%;
+                z-index: 5;
+                animation: rotate 3s linear infinite both;
+            }
+
+            .cdj-img {
+                width: 250%;
+                height: 200%;
+                object-fit: contain;
+                position: absolute;
+                top: 0%;
+                right: -75%;
+            }
+        
+        }
+    }
+}

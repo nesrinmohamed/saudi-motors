@@ -1,0 +1,240 @@
+@use "./../abstracts" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.cdnfonts.com/css/neo-sans-arabic");
+// font-family: 'El Messiri', sans-serif;
+
+@font-face {
+    font-family: "Neo Sans Arabic";
+    src: url("~/assets/fonts/NEOSANSARABIC.TTF") format("ttf"),
+        url("~/assets/fonts/NEOSANSARABICBLACK.TTF") format("ttf"),
+        url("~/assets/fonts/NEOSANSARABICBOLD.TTF") format("ttf"),
+        url("~/assets/fonts/NEOSANSARABICLIGHT.TTF") format("ttf"); /* Adjust the path and format as needed */
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background: linear-gradient(to bottom right, #2c2c2c, #181818, #020202) !important;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: "Neo Sans Arabic", sans-serif;
+}
+#app {
+    // background: $background !important;
+    background: linear-gradient(to bottom right, #2c2c2c, #181818, #020202) !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: "Neo Sans Arabic", sans-serif;
+    overflow: hidden;
+}
+
+header {
+    position: relative !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.v-toolbar__content {
+    justify-content: space-around !important;
+}
+.v-main {
+    overflow-x: hidden;
+    padding: 0;
+}
+
+.v-application.v-theme--customLightTheme.v-layout.v-layout--full-height.v-locale--is-rtl {
+    background: linear-gradient(to bottom right, #2c2c2c, #181818, #020202) !important;
+}
+
+input {
+    border: 0;
+    outline: none;
+}
+.v-overlay__scrim {
+    // background-color: #00000050 !important;
+    opacity: 0.1 !important;
+}
+
+.swiper {
+    position: relative;
+    .swiper-slide {
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 20px;
+        height: 30px;
+        padding: 8px 4px;
+        gap: 8px;
+        background: #000000;
+        opacity: 0.3;
+        &::after {
+            color: #fff;
+            font-size: 16px;
+        }
+    }
+}
+.swiper-button-prev {
+    right: 0 !important;
+    left: auto !important;
+}
+.swiper-button-next {
+    left: 0 !important ;
+    right: auto !important;
+}
+
+.swiper-pagination {
+    bottom: 0 !important;
+}
+.swiper-pagination-bullet {
+    // background-color: $primary-lighten-2;
+    margin-top: 15px;
+}
+.swiper-pagination-bullet-active {
+    // background-color: $secondary;
+    // box-shadow: 0 0 0 1.5px $secondary;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    // font-size: 12px !important;
+    &:hover {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    &.no-decoration {
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.swiper-vertical {
+    height: 100%;
+}
+a.router-link-active {
+    font-size: 16px;
+    font-weight: bold;
+    color: $primary-500 !important;
+}
+/* exact link will show the primary color for only the exact matching link */
+a.router-link-exact-active {
+    color: inherit !important;
+    color: $primary-500 !important;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.clickable {
+    transition: all 150ms ease-in-out;
+
+    &:active {
+        transform: scale(0.9);
+    }
+}
+
+.preload {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 999999;
+    background-color: $background;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center-logo {
+    left: 50%;
+    // top: 10%;
+    transform: translateX(-50%);
+}
+
+.v-field--variant-solo {
+    box-shadow: none;
+    border-radius: 5em !important;
+    letter-spacing: normal !important;
+    box-shadow: 0 0 0 0.5px white !important;
+    // background-color: black;
+
+    label {
+        // color: white;
+    }
+
+    ::placeholder {
+        font-weight: 600;
+        font-size: 14px;
+    }
+}
+
+.rounded-input {
+    .v-field--variant-solo {
+        border-radius: 2em !important;
+    }
+}
+.small-input {
+    .v-field--variant-solo {
+        ::placeholder {
+            font-weight: 600;
+            font-size: 10px;
+        }
+    }
+}
+.v-field.v-field--active {
+    width: 256px !important;
+    height: 40px !important;
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    border-radius: 10px;
+    background: $secondary-bg;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+// ::-webkit-scrollbar-track {
+//     box-shadow: inset 0 0 5px grey;
+//     border-radius: 10px;
+// }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $primary-500;
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: $primary-500;
+}
+
+.search-inputs {
+    margin: 5px 3px;
+    &.md {
+        .input {
+            width: 250px;
+        }
+        &.sm,
+        &.xs {
+            .input {
+                width: 250px;
+            }
+        }
+    }
+
+    .input {
+        width: 256px;
+        height: 65px;
+        margin: 3px;
+    }
+}

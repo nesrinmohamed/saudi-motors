@@ -1,0 +1,49 @@
+
+
+{
+    "games":[
+        {
+          "id":1,
+          "title":"LUCKY SPIN",
+          "text":"CN, EN, AR",
+          "description":"You can bet on 6 different fruits and win gold from the correct guess",
+          "image":"~/assets/img/images/upcoming_game_thumb02.png"
+        },
+        {
+            "id":2,
+            "title":"LUCKY SPIN",
+            "text":"CN, EN, AR",
+            "description":"You can bet on 6 different fruits and win gold from the correct guess",
+            "image":"~/assets/img/images/upcoming_game_thumb02.png"
+          },
+          {
+            "id":3,
+            "title":"LUCKY SPIN",
+            "text":"CN, EN, AR",
+            "description":"You can bet on 6 different fruits and win gold from the correct guess",
+            "image":"~/assets/img/images/upcoming_game_thumb02.png"
+          },
+          {
+            "id":4,
+            "title":"LUCKY SPIN",
+            "text":"CN, EN, AR",
+            "description":"You can bet on 6 different fruits and win gold from the correct guess",
+            "image":"~/assets/img/images/upcoming_game_thumb02.png"
+          },
+          {
+            "id":5,
+            "title":"LUCKY SPIN",
+            "text":"CN, EN, AR",
+            "description":"You can bet on 6 different fruits and win gold from the correct guess",
+            "image":"~/assets/img/images/upcoming_game_thumb02.png"
+          },
+          {
+            "id":6,
+            "title":"LUCKY SPIN",
+            "text":"CN, EN, AR",
+            "description":"You can bet on 6 different fruits and win gold from the correct guess",
+            "image":"~/assets/img/images/upcoming_game_thumb02.png"
+          }
+
+]
+}

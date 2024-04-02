@@ -21,9 +21,8 @@ export default defineNuxtConfig({
         baseURL: "/",
     },
 
-    // server: {
+    // devServer: {
     //     host: "0.0.0.0",
-    //     // port: '8080',
     // },
     css: ["vuetify/lib/styles/main.sass", "~/assets/sass/main.scss", "animate.css/animate.min.css"],
 

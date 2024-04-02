@@ -12,6 +12,7 @@ const center = reactive({
   lng: parseFloat(infoStore.roomDetails?.longitude),
 });
 
+
 // ==========[ACTIONS]===========
 </script>
 

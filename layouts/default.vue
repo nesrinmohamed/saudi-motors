@@ -60,7 +60,7 @@ useAsyncData(() => {
 //   infoStore.setFactoryId(id);
 // });
 onMounted(() => {
-  infoStore.setFactoryId();
+  // infoStore.setFactoryId();
   // useAsyncData("fetchData", () => {
   // });
 });

@@ -114,7 +114,7 @@ onMounted(() => {});
         <swiper-slide
           v-for="(car, index) in advertise.images"
           :key="'c1' + index"
-          ><img :src="car.url" cover />
+          ><v-img :src="car.url" contain width="100%" height="100%"></v-img>
         </swiper-slide>
       </swiper>
     </div>
@@ -618,24 +618,26 @@ onMounted(() => {});
 </template>
 
 <style lang="scss" scoped>
-.swiper1 {
-  .swiper-slide {
-    width: 100%;
-    height: 569px;
-    img {
-      width: 100%;
-      height: 100%;
-    }
-  }
-}
-.mySwiper2 {
-  .swiper-slide {
-    width: 191px;
-    height: 129px;
-    img {
-      width: 100%;
-      height: 100%;
-    }
-  }
-}
+// .swiper1 {
+//   .swiper-slide {
+//     width: 100%;
+//     // height: 569px;
+//     img {
+//       width: 100%;
+//       height: 100%;
+//       object-fit: contain;
+//     }
+//   }
+// }
+// .mySwiper2 {
+//   .swiper-slide {
+//     width: 191px;
+//     height: 129px;
+//     img {
+//       width: 100%;
+//       height: 100%;
+//       object-fit: contain;
+//     }
+//   }
+// }
 </style>

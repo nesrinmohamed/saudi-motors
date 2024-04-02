@@ -42,7 +42,7 @@ const setFilter = async () => {
     ? "&factories=" + parseInt(filters.factories)
     : "";
   const fitlerFactoryDetails = !isNaN(parseInt(filters.factoryId))
-    ? "&factory-details=" + parseInt(filters.factoryId)
+    ? "&factory_detail_id=" + parseInt(filters.factoryId)
     : "";
   const fitlerTypeParam = !isNaN(parseInt(filters.type))
     ? "&is_new=" + parseInt(filters.type)
@@ -80,11 +80,16 @@ const loadMore = () => {
 
   setFilter();
 };
+
+const filterCategory = () => {
+  infoStore.setFactoryId(filters.factories);
+  filters.factoryId = "اختيار";
+};
 const searchBtn = () => {
   infoStore.advertisements = null;
   page.value = 1;
   setFilter();
-  infoStore.setFactoryId(filters.factoryId);
+  // return infoStore.setFactoryId(filters.factoryId);
 };
 
 /*##########[ LIFE CYCLE ]##########*/
@@ -135,7 +140,7 @@ onBeforeUnmount(() => {});
                 color="#BDE2ED"
                 base-color="#BDE2ED"
                 append-inner-icon="mdi-chevron-down"
-                @update:modelValue="infoStore.setFactoryId(filters.factories)"
+                @update:modelValue="filterCategory()"
               >
               </v-select>
             </v-sheet>

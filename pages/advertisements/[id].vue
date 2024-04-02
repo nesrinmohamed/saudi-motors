@@ -5,6 +5,7 @@ import AssetsManager from "../../core/AssetsManager";
 import { ref } from "vue";
 import { useRoute } from "vue-router";
 import { useInfoStore } from "~/stores/globalStore";
+import { useDisplay } from "vuetify";
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css/free-mode";
@@ -14,6 +15,7 @@ import "swiper/css/thumbs";
 // import required modules
 import { EffectFade, FreeMode, Navigation, Thumbs } from "swiper/modules";
 // ==========[STATUS]==========
+const display = useDisplay();
 const route = useRoute();
 const infoStore = useInfoStore();
 const showOnMounted = ref(false);
@@ -89,7 +91,7 @@ useAsyncData(() => {
 </script>
 
 <template>
-  <div class="car-details mt-n10">
+  <div class="car-details mt-n10" :class="$vuetify.display.name">
     {{ infoStore.advertisements?.data.phones }}
     <v-sheet color="grey-darken-3 " class="rounded-lg px-2 py-3 mb-3">
       <div class="d-flex align-center justify-space-between">
@@ -116,7 +118,7 @@ useAsyncData(() => {
         >
           <div v-for="(phoneItem, i) in infoStore.advertisements.data" :key="i">
             <a
-              class="rounded-lg d-flex align-center justify-center"
+              class="rounded-lg d-flex align-center justify-center mb-2"
               width="130"
               target="_blank"
               :href="`https://wa.me/${phoneItem.phones?.phone}`"
@@ -154,11 +156,11 @@ useAsyncData(() => {
         <swiper-slide
           v-for="(car, index) in infoStore.advertisementId?.images"
           :key="'c1' + index"
-          ><img :src="car.url" cover />
+          ><v-img :src="car.url" contain width="100%" height="100%"></v-img>
         </swiper-slide>
       </swiper>
       <v-row class="mt-5">
-        <v-col cols="10">
+        <v-col cols="12" md="10">
           <swiper
             @swiper="setThumbsSwiper"
             :spaceBetween="10"
@@ -173,15 +175,15 @@ useAsyncData(() => {
               @click="onSwiperBanner(index)"
               :key="index"
               class="rounded-lg"
-              ><img :src="car.url" width="100%" height="100%" cover />
+            >
+              <v-img :src="car.url" width="100%" height="100%" contain></v-img>
             </swiper-slide>
           </swiper>
         </v-col>
-        <v-col cols="2">
+        <v-col cols="12" md="2">
           <v-sheet
             color="grey-darken-3"
-            class="rounded-lg text-center d-flex justify-center align-center flex-column"
-            height="129px"
+            class="image-count rounded-lg text-center d-flex align-center justify-center flex-column"
             v-if="infoStore.advertisementId"
           >
             <p>
@@ -714,24 +716,36 @@ useAsyncData(() => {
 </template>
 
 <style lang="scss" scoped>
-.swiper1 {
-  .swiper-slide {
-    width: 100%;
-    height: 569px;
-    img {
-      width: 100%;
-      height: 100%;
-    }
-  }
-}
-.mySwiper2 {
-  .swiper-slide {
-    width: 191px;
+.car-details {
+  .image-count {
     height: 129px;
-    img {
-      width: 100%;
-      height: 100%;
+  }
+  &.sm,
+  &.xs {
+    .image-count {
+      height: 80px;
     }
   }
 }
+//   .swiper1 {
+//     .swiper-slide {
+//       width: 100%;
+//       // height: 569px;
+//       img {
+//         width: 100%;
+//         height: 100%;
+//       }
+//     }
+//   }
+//   .mySwiper2 {
+//     .swiper-slide {
+//       // width: 191px;
+//       // height: 129px;
+//       img {
+//         width: 100%;
+//         height: 100%;
+//         object-fit: contain;
+//       }
+//     }
+//   }
 </style>
